@@ -1,2 +1,4 @@
-dnsrecon -t rvl -r <ip_range>
-
+dnsrecon -t rvl -r <ip_range>	# revers lookup
+dnsrecon -t std -d <domain>	# standard DNS
+dnsrecon -t brt -d <domain>	# subdomains
+dnsrecon -d <domain> -t axfr	# zone-transfer
