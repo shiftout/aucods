@@ -1,0 +1,2 @@
+dnsrecon -t rvl -r <ip_range>
+
