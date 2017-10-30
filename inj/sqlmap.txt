@@ -1,0 +1,4 @@
+# GET Request
+sqlmap -u "http://<url>?id=1&str=val"
+# POST Request with Cookie
+sqlmap -u "http://<url>" --data="id=1&str=val" --cookie="cookie1=val1"
