@@ -1,0 +1,18 @@
+netstat -ant		# TCP connections
+netstat -anu		# UDP connections
+netstat -tulpn		# Connections with PIDs
+ps -ef			# Process listing
+ps -aux | grep "nmap"	# List nmap processes if any
+apropos	who		# Find commands relevant to who
+fdisk -l		# List connected drives
+md5sum -t /etc/apache2/apache2.conf	# Calc MD5 for Apache HTTPd configuration file
+sha1sum ~/.bashrc	# Calc SHA1 for .bashrc
+split -b 1K ~/.bash_history prt_ # Split file into 1K chunks
+find ~/ -name ".bash*"	# Find all files starting with .bash on the home folder 
+echo "" > /var/log/auth.log	# Clear auth.log file
+ln /dev/null ~/.bash_history -sf	# Permanently send all bash history to /dev/null
+dnsrecon -t rvl -r <ip_range>	# reverse lookup
+dnsrecon -t std -d <domain>	# standard DNS
+dnsrecon -t brt -d <domain>	# subdomains
+dnsrecon -d <domain> -t axfr	# zone-transfer
+
