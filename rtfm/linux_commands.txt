@@ -15,4 +15,5 @@ dnsrecon -t rvl -r <ip_range>	# reverse lookup
 dnsrecon -t std -d <domain>	# standard DNS
 dnsrecon -t brt -d <domain>	# subdomains
 dnsrecon -d <domain> -t axfr	# zone-transfer
+find ./ -type f -exec grep -H 'SELECT' {} \; # find all files which contain the word SELECT
 
