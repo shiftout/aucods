@@ -1,0 +1,26 @@
+# linux-relevant
+netstat -ant
+netstat -anu
+netstat -tulpn
+ps -ef
+ps -aux | grep "nmap"
+apropos	who
+fdisk -l
+md5sum -t /etc/apache2/apache2.conf
+sha1sum ~/.bashrc	
+split -b 1K ~/.bash_history prt_ 
+find ~/ -name ".bash*"	
+echo "" > /var/log/auth.log	
+ln /dev/null ~/.bash_history -sf	
+dnsrecon -t rvl -r <ip_range>	
+dnsrecon -t std -d <domain>	
+dnsrecon -t brt -d <domain>	
+dnsrecon -d <domain> -t axfr	
+find ./ -type f -exec grep -H 'SELECT' {} \; 
+nc -l -p 8888		
+
+# scanning-relevant
+nmap -F 192.168.2.0/24		
+nmap -A 192.168.2.0/24		
+unicornscan -mT 8.8.8.8		
+./onetwopunch.sh -t targets.txt	
