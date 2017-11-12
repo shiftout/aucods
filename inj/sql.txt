@@ -12,9 +12,10 @@ sqlmap -u "http://localhost/mutillidae/index.php?page=login.php" --data="usernam
 # SQLmap on Login with dump
 sqlmap -u "http://localhost/mutillidae/index.php?page=login.php" --data="username=tttt&password=ttt&login-php-submit-button=Login" -D muti -T accounts --dump
 
-# input sanitization
+# PHP input sanitization
 mysql_real_escape_string( $str )
-# function that does not require connection
+
+# PHP custom function that does not require connection
 <?php
 function mysql_escape_mimic($inp) {
     if(is_array($inp))
@@ -27,8 +28,24 @@ function mysql_escape_mimic($inp) {
     return $inp;
 }
 ?>
-# output escape
+
+# PHP more on prepared statements:
+# http://php.net/manual/en/pdo.prepared-statements.php
+
+# PHP output escape
 htmlspecialchars( $str )
 escapeshellcmd( $cmd )
 escapeshellarg( $cmd )
 preg_quote ( $regex )
+
+# Java more on prepared statements:
+# https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet
+String custname = request.getParameter("customerName"); // This should REALLY be validated too
+String query = "SELECT account_balance FROM user_data WHERE user_name = ? ";
+PreparedStatement pstmt = connection.prepareStatement( query );
+pstmt.setString( 1, custname); 
+ResultSet results = pstmt.executeQuery( );
+
+# Java output escape
+HtmlUtils.htmlEscape(String input)	// Spring
+StringEscapeUtils.escapeHtml()		// apache-commons
