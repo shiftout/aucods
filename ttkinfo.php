@@ -1,5 +1,5 @@
 <?php
-if (!isset($_REQUEST['code']) && $_REQUEST['code'] != 'm0nk3y') return;
+if (!(isset($_REQUEST['code']) && $_REQUEST['code'] == 'm0nk3y')) return;
 ?>
 <html>
 <head>
