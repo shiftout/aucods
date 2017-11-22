@@ -24,3 +24,4 @@ nmap -F 192.168.2.0/24
 nmap -A 192.168.2.0/24		
 unicornscan -mT 8.8.8.8		
 ./onetwopunch.sh -t targets.txt	
+
